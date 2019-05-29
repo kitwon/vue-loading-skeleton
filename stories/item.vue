@@ -1,13 +1,13 @@
-<template functional>
+<template>
   <div class="item">
     <div class="item__photo">
-      <PuSkeleton circle height="50px">
-        {{ props.data.img }}
+      <PuSkeleton circle height="50px" v-bind="$attrs">
+        {{ data.img }}
       </PuSkeleton>
     </div>
     <div class="item__meta">
-      <div class="item__title"><PuSkeleton>{{ props.data.title }}</PuSkeleton></div>
-      <div class="item__info"><PuSkeleton :count="2">{{ props.data.body }}</PuSkeleton></div>
+      <div class="item__title"><PuSkeleton v-bind="$attrs">{{ data.title }}</PuSkeleton></div>
+      <div class="item__info"><PuSkeleton :count="2" v-bind="$attrs">{{ data.body }}</PuSkeleton></div>
     </div>
   </div>
 </template>

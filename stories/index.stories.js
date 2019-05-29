@@ -48,14 +48,6 @@ storiesOf('Skeleton Component', module)
     }
   }))
 
-  .add('Change Theme', () => ({
-    render: h => (
-      <SkeletonTheme color="#e6f3fd" highlight="#eef6fd">
-        <Item data={{}} />
-      </SkeletonTheme>
-    )
-  }))
-
   .add('Use with list', () => ({
     components: {
       Item
@@ -83,4 +75,25 @@ storiesOf('Skeleton Component', module)
         ));
       }, 1500);
     }
+  }))
+
+  .add('Disable animation', () => ({
+    render: h => <Item data={{}} duration={0} />
+  }));
+
+storiesOf('Skeleton Theme', module)
+  .add('Change Theme', () => ({
+    render: h => (
+      <SkeletonTheme color="#e6f3fd" highlight="#eef6fd" duration={2}>
+        <Item data={{}} />
+      </SkeletonTheme>
+    )
+  }))
+  .add('Disable all animation', () => ({
+    render: h => (
+      <SkeletonTheme duration={0}>
+        <Item data={{}} />
+        <Item data={{}} />
+      </SkeletonTheme>
+    )
   }));

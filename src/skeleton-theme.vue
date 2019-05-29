@@ -26,6 +26,14 @@ export default {
     highlight: {
       type: String,
       default: DEFAULT_HIGHLIGHT
+    },
+    duration: {
+      type: Number,
+      default: 1.5
+    },
+    tag: {
+      type: String,
+      default: 'div'
     }
   },
   data() {
@@ -34,7 +42,7 @@ export default {
     }
   },
   render(h) {
-    const { color, highlight } = this;
+    const { color, highlight, duration } = this;
     this.themeStyle.backgroundColor = color;
     this.themeStyle.backgroundImage = `linear-gradient(
       90deg,
@@ -42,8 +50,18 @@ export default {
       ${highlight},
       ${color}
     )`;
+    if (duration) {
+      this.themeStyle.animation = `SkeletonLoading ${duration}s ease-in-out infinite`;
+    } else {
+      this.themeStyle.animation = '';
+      this.themeStyle.backgroundImage = '';
+    }
 
-    return this.$slots.default;
+    if (this.tag) {
+      return h(this.tag, this.$slots.default);
+    } else {
+      return this.$slots.default[0];
+    }
   }
 }
 </script>

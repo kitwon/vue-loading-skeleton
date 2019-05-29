@@ -44,8 +44,12 @@ export default {
     const { width, height, duration, prefix, loading, circle, count } = this;
     const classes = [`${prefix}-skeleton`];
     const elements = [];
-    const styles = {
-      animation: `SkeletonLoading ${duration}s ease-in-out infinite`
+    const styles = {...this.themeStyle};
+
+    if (duration) {
+      styles.animation = `SkeletonLoading ${duration}s ease-in-out infinite`;
+    } else {
+      styles.backgroundImage = '';
     }
     if (width) styles.width = width;
     if (height) styles.height = height;
@@ -56,7 +60,7 @@ export default {
         <span
           key={i}
           class={classes}
-          style={{ ...styles, ...this.themeStyle }}>
+          style={styles}>
           &zwnj;
         </span>
       )
