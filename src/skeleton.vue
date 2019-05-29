@@ -1,14 +1,17 @@
 <script lang="jsx">
 import { SkeletonStyle } from './skeleton-theme.vue';
 
-const isEmptyVNode = node => {
-  let str = node.text;
+const isEmptyVNode = children => {
+  if (!children) return true;
+
+  const [firstNode] = children;
+  let str = firstNode.text;
   if (str) {
     // remove all line-break and space character
-    str = node.text.replace(/(\n|\r\n|\s)/g, '');
+    str = str.replace(/(\n|\r\n|\s)/g, '');
   }
 
-  return typeof node.tag === 'undefined' && !str;
+  return typeof firstNode.tag === 'undefined' && !str;
 }
 
 export default {
@@ -30,7 +33,7 @@ export default {
     },
     duration: {
       type: Number,
-      default: 1.2
+      default: 1.5
     },
     width: [String, Number],
     height: [String, Number],
@@ -59,7 +62,7 @@ export default {
       )
     }
 
-    const showLoading = typeof loading !== 'undefined' ? loading : isEmptyVNode(this.$slots.default[0]);
+    const showLoading = typeof loading !== 'undefined' ? loading : isEmptyVNode(this.$slots.default);
     return (!showLoading ? this.$slots.default : <span>{ elements }</span>);
   }
 };

@@ -1,13 +1,21 @@
 <template functional>
   <div class="item">
     <div class="item__photo">
-      <PuSkeleton circle height="50px">
+      <template v-if="props.data.img">
         {{ props.data.img }}
+      </template>
+      <PuSkeleton circle height="50px" v-else>
       </PuSkeleton>
     </div>
     <div class="item__meta">
-      <div class="item__title"><PuSkeleton>{{ props.data.title }}</PuSkeleton></div>
-      <div class="item__info"><PuSkeleton :count="2">{{ props.data.body }}</PuSkeleton></div>
+      <div class="item__title">
+        <template v-if="props.data.title">{{props.data.title}}</template>
+        <PuSkeleton v-else />
+      </div>
+      <div class="item__info">
+        <template v-if="props.data.body">{{props.data.body}}</template>
+        <PuSkeleton v-else :count="2" />
+      </div>
     </div>
   </div>
 </template>
