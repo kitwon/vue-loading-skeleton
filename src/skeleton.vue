@@ -1,7 +1,7 @@
 <script lang="jsx">
 import { SkeletonStyle } from './skeleton-theme.vue';
 
-const isEmptyVNode = children => {
+const isEmptyVNode = (children) => {
   if (!children) return true;
 
   const [firstNode] = children;
@@ -12,7 +12,7 @@ const isEmptyVNode = children => {
   }
 
   return typeof firstNode.tag === 'undefined' && !str;
-}
+};
 
 export default {
   name: 'PuSkeleton',
@@ -40,11 +40,13 @@ export default {
     circle: Boolean,
     loading: undefined
   },
-  render(h) {
-    const { width, height, duration, prefix, loading, circle, count } = this;
+  render() {
+    const {
+      width, height, duration, prefix, loading, circle, count
+    } = this;
     const classes = [`${prefix}-skeleton`];
     const elements = [];
-    const styles = {...this.themeStyle};
+    const styles = { ...this.themeStyle };
 
     if (duration) {
       styles.animation = `SkeletonLoading ${duration}s ease-in-out infinite`;
@@ -63,7 +65,7 @@ export default {
           style={styles}>
           &zwnj;
         </span>
-      )
+      );
     }
 
     const showLoading = typeof loading !== 'undefined' ? loading : isEmptyVNode(this.$slots.default);

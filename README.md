@@ -2,7 +2,9 @@
 
 Make beautiful loading skeleton that automatically adapt your vue app.
 
-💡Demos of storybook
+[💡Demos of storybook](https://kitwon.github.io/vue-loading-skeleton/)
+
+[📕中文文档](https://github.com/kitwon/vue-loading-skeleton/blob/master/README-CN.md)
 
 ## Base usage
 Install by `npm`/`yarn` with vue-loading-skeleton
@@ -27,7 +29,6 @@ import Skelenton from 'vue-loading-skeleton';
 ```
 
 ## 🌈 Introduction
----
 
 ### Adapts to the styles you have defined
 The `<Skeleton/>` component is design to used directly in your vue component. It can replace the main content while page still in loading. So you don't need to prepare a skeleton screen meticulously to match the `font-size`, `margin` or another style your content takes on, wrap the content with the `<Skeleton/>` component, it will automatically fill the correct dimensions.
@@ -126,17 +127,19 @@ import { Skeleton, Skeleton } form 'vue-loading-skeleton';
 ```
 
 ### Skeleton props
-|props|description|type|default|
-|--|--|--|--|--|
-|count|rows count of component|number|1|
-|duration|animation duration time, 0 as close|number|1.5|
-|width|component width|string||
-|height|component height|string||
-|circle|make the skeleton look like a circle|boolean|false|
-|loading|skeleton loading status|boolean|undefined|
+| props    | description                          | type    | default   |
+| -------- | ------------------------------------ | ------- | --------- |
+| count    | rows count of component              | number  | 1         |
+| duration | animation duration time, 0 as close  | number  | 1.5       |
+| width    | component width                      | string  |           |
+| height   | component height                     | string  |           |
+| circle   | make the skeleton look like a circle | boolean | false     |
+| loading  | skeleton loading status              | boolean | undefined |
 
 ### SkeletonTheme props
-|props|description|type|default|
-|--|--|--|--|--|
-|color|skeleton background color|string|#eeeeee|
-|highlight|animation highlight color|string|#f5f5f5|
+| props     | description                  | type   | default |
+| --------- | ---------------------------- | ------ | ------- |
+| color     | skeleton background color    | string | #eeeeee |
+| highlight | animation highlight color    | string | #f5f5f5 |
+| duration  | set duration of all skeleton | number | 1.5     |
+| tag       | theme container tag name     | string | div     |

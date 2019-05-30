@@ -1,10 +1,16 @@
 {
   "name": "vue-loading-skeleton",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "main": "dist/vue-loading-skeleton.umd.js",
+  "description": "Make beautiful loading skeleton that automatically adapt your vue app.",
+  "keywords": [
+    "vuejs",
+    "vue",
+    "skeleton"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name vue-loading-skeleton src/index.js --report",
+    "build": "vue-cli-service build --target lib --name vue-loading-skeleton src/index.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "storybook": "start-storybook -p 6006",

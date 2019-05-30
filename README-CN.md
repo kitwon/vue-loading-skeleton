@@ -2,7 +2,7 @@
 
 能自动适应外层样式的vue骨架屏组件。
 
-💡Demos of storybook
+[💡Demos of storybook](https://kitwon.github.io/vue-loading-skeleton/)
 
 ## 安装使用
 `npm install vue-loading-skeleton -S`
@@ -31,7 +31,7 @@ import Skelenton from 'vue-loading-skeleton';
 ## 🌈 Introduction
 ---
 
-### Adapts to the styles you have defined
+### 自动适应你定义的样式
 `<Skeleton/>`设计目的是能直接在你的vue组件中嵌套使用，组件能在加载时候自动用骨架填充空白的内容，所以你不用特别地设计字体大小、边距或其他样式与页面一样专用的骨架屏，因为组件会自动用合适的尺寸填充元素。
 
 举个🌰:
@@ -129,18 +129,19 @@ import { Skeleton, Skeleton } form 'vue-loading-skeleton';
 ```
 
 ### Skeleton props
-|props|description|type|default|
-|--|--|--|--|--|
-|count|单个组件里面显示的数量|number|1|
-|duration|动画过度时间，0的时候为关闭动画|number|1.5|
-|width|组件长度|string||
-|height|组件高度|string||
-|circle|设置为圆形|boolean|false|
-|loading|组件加载状态，使用这个props时候不会检测子节点|boolean|undefined|
+| props    | description                                   | type    | default   |
+| -------- | --------------------------------------------- | ------- | --------- |
+| count    | 单个组件里面显示的数量                        | number  | 1         |
+| duration | 动画过渡时间，0的时候为关闭动画               | number  | 1.5       |
+| width    | 组件长度                                      | string  |           |
+| height   | 组件高度                                      | string  |           |
+| circle   | 设置为圆形                                    | boolean | false     |
+| loading  | 组件加载状态，使用这个props时候不会检测子节点 | boolean | undefined |
 
 ### SkeletonTheme props
-|props|description|type|default|
-|--|--|--|--|--|
-|color|骨架的颜色|string|#eeeeee|
-|highlight|动画高亮颜色|string|#f5f5f5|
-|tag|容器标签|string|div|
+| props     | description                    | type   | default |
+| --------- | ------------------------------ | ------ | ------- |
+| color     | 骨架的颜色                     | string | #eeeeee |
+| highlight | 动画高亮颜色                   | string | #f5f5f5 |
+| duration  | 设置所有骨架组件的动画过渡时间 | number | 1.5     |
+| tag       | 容器标签                       | string | div     |

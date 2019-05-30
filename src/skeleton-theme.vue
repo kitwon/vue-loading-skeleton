@@ -9,14 +9,14 @@ export const SkeletonStyle = {
     ${DEFAULT_HIGHLIGHT},
     ${DEFAULT_BACKGROUND}
   )`
-}
+};
 
 export default {
   name: 'PuSkeletonTheme',
   provide() {
     return {
       _themeStyle: this.themeStyle
-    }
+    };
   },
   props: {
     color: {
@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       themeStyle: { ...SkeletonStyle }
-    }
+    };
   },
   render(h) {
     const { color, highlight, duration } = this;
@@ -59,9 +59,8 @@ export default {
 
     if (this.tag) {
       return h(this.tag, this.$slots.default);
-    } else {
-      return this.$slots.default[0];
     }
+    return this.$slots.default[0];
   }
-}
+};
 </script>
