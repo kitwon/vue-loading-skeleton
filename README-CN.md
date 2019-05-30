@@ -1,11 +1,13 @@
 # 💅🏻 Vue-loading-skeleton
 
-Make beautiful loading skeleton that automatically adapt your vue app.
+能自动适应外层样式的vue骨架屏组件。
 
 💡Demos of storybook
 
-## Base usage
-Install by `npm`/`yarn` with vue-loading-skeleton
+## 安装使用
+`npm install vue-loading-skeleton -S`
+or
+`yarn add vue-loading-skeleton`
 
 ```jsx
 import Skeleton from 'vue-loading-skeleton';
@@ -15,7 +17,7 @@ import Skeleton from 'vue-loading-skeleton';
 <Skeleton count={5} />
 ```
 
-Or register for global component
+或者在全局中注册组件
 
 ```jsx
 import Vue from 'vue';
@@ -30,9 +32,9 @@ import Skelenton from 'vue-loading-skeleton';
 ---
 
 ### Adapts to the styles you have defined
-The `<Skeleton/>` component is design to used directly in your vue component. It can replace the main content while page still in loading. So you don't need to prepare a skeleton screen meticulously to match the `font-size`, `margin` or another style your content takes on, wrap the content with the `<Skeleton/>` component, it will automatically fill the correct dimensions.
+`<Skeleton/>`设计目的是能直接在你的vue组件中嵌套使用，组件能在加载时候自动用骨架填充空白的内容，所以你不用特别地设计字体大小、边距或其他样式与页面一样专用的骨架屏，因为组件会自动用合适的尺寸填充元素。
 
-For example:
+举个🌰:
 ```html
 <div class="item">
   <div class="item__photo">
@@ -51,13 +53,13 @@ For example:
 </div>
 ```
 
-### ⚠️ Notice
-The skeleton component will check the `tag` and `text` in the first child node is it valid. If you find the component work is not in expect, you should use `v-if` or `loading props`, and report the issues to me.
+### ⚠️ 需要注意的地方
+由于组件是使用子节点的`tag`和`text`判断内容是否为空，从而判断组件的加载状态。所以当组件表现异常时候，你可以用`v-if`或者用`loading props`去替代组件嵌套。并希望能把问题及时反馈给我。
 
 ## 📔Usage
 ---
 
-### Base usage
+### 一般使用
 ```html
 <div class="item">
   <Skeleton>
@@ -66,7 +68,7 @@ The skeleton component will check the `tag` and `text` in the first child node i
 </div>
 ```
 
-### Use v-if
+### 结合v-if使用
 ```html
 <div class="item">
   <template v-if="content">{{ content }}</template>
@@ -74,8 +76,9 @@ The skeleton component will check the `tag` and `text` in the first child node i
 </div>
 ```
 
-### List Skeleton
-In many cases, you need a skeleton list to fulfill a listing page. You can set the list data default to the number. Such as:
+### 列表骨架
+很多时候，骨架都会以列表的形式出现，所以你可以在循环的时候使用数字作为列表数据的默认值。
+️⚠️但是要注意，因为使用数字去循环生成列表，所以要确保列表里的组件在绑定值的时候都有空值判断，避免出现`ReferenceError`。
 
 ```html
 <div class="item" v-for="(item, index) in data" :key="index">
@@ -100,8 +103,8 @@ export default {
 }
 ```
 
-### Theming
-Using the `<SkeletonTheme />` component, you can change the color of all child skeleton component:
+### 改变全局样式
+使用 `<SkeletonTheme />` 组件设置所有子组件的样式
 
 ```jsx
 import { Skeleton, Skeleton } form 'vue-loading-skeleton';
@@ -128,15 +131,16 @@ import { Skeleton, Skeleton } form 'vue-loading-skeleton';
 ### Skeleton props
 |props|description|type|default|
 |--|--|--|--|--|
-|count|rows count of component|number|1|
-|duration|animation duration time, 0 as close|number|1.5|
-|width|component width|string||
-|height|component height|string||
-|circle|make the skeleton look like a circle|boolean|false|
-|loading|skeleton loading status|boolean|undefined|
+|count|单个组件里面显示的数量|number|1|
+|duration|动画过度时间，0的时候为关闭动画|number|1.5|
+|width|组件长度|string||
+|height|组件高度|string||
+|circle|设置为圆形|boolean|false|
+|loading|组件加载状态，使用这个props时候不会检测子节点|boolean|undefined|
 
 ### SkeletonTheme props
 |props|description|type|default|
 |--|--|--|--|--|
-|color|skeleton background color|string|#eeeeee|
-|highlight|animation highlight color|string|#f5f5f5|
+|color|骨架的颜色|string|#eeeeee|
+|highlight|动画高亮颜色|string|#f5f5f5|
+|tag|容器标签|string|div|
