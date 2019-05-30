@@ -29,7 +29,6 @@ import Skelenton from 'vue-loading-skeleton';
 ```
 
 ## 🌈 Introduction
----
 
 ### 自动适应你定义的样式
 `<Skeleton/>`设计目的是能直接在你的vue组件中嵌套使用，组件能在加载时候自动用骨架填充空白的内容，所以你不用特别地设计字体大小、边距或其他样式与页面一样专用的骨架屏，因为组件会自动用合适的尺寸填充元素。
@@ -57,7 +56,6 @@ import Skelenton from 'vue-loading-skeleton';
 由于组件是使用子节点的`tag`和`text`判断内容是否为空，从而判断组件的加载状态。所以当组件表现异常时候，你可以用`v-if`或者用`loading props`去替代组件嵌套。并希望能把问题及时反馈给我。
 
 ## 📔Usage
----
 
 ### 一般使用
 ```html

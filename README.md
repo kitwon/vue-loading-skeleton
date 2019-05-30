@@ -56,7 +56,6 @@ For example:
 The skeleton component will check the `tag` and `text` in the first child node is it valid. If you find the component work is not in expect, you should use `v-if` or `loading props`, and report the issues to me.
 
 ## 📔Usage
----
 
 ### Base usage
 ```html
