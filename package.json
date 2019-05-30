@@ -9,6 +9,7 @@
     "skeleton"
   ],
   "types": "types/index.d.ts", 
+  "style": "dist/vue-loading.skeleton.css",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name vue-loading-skeleton src/index.js",
