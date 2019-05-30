@@ -102,7 +102,7 @@ export default {
 ```
 
 ### Theming
-Using the `<SkeletonTheme />` component, you can change the color of all child skeleton component:
+Using the `<SkeletonTheme />` component, you can change the color, duration of all skeleton components below it:
 
 ```jsx
 import { Skeleton, Skeleton } form 'vue-loading-skeleton';

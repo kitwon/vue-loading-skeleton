@@ -104,7 +104,7 @@ export default {
 ```
 
 ### 改变全局样式
-使用 `<SkeletonTheme />` 组件设置所有子组件的样式
+使用 `<SkeletonTheme />` 组件设置所有子组件的样式:
 
 ```jsx
 import { Skeleton, Skeleton } form 'vue-loading-skeleton';
