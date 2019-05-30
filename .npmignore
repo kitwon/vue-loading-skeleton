@@ -9,13 +9,14 @@ node_modules
 docs
 
 #dev
-test
+tests
 
 #storybook
 .storybook
-sotries
+stories
 
 #other
 *.config.js
-.borwserlistrc
+.browserslistrc
 .editorconfig
+.eslintrc

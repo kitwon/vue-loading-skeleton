@@ -35,14 +35,18 @@ export default {
       type: Number,
       default: 1.5
     },
+    tag: {
+      type: String,
+      default: 'span'
+    },
     width: [String, Number],
     height: [String, Number],
     circle: Boolean,
     loading: undefined
   },
-  render() {
+  render(h) {
     const {
-      width, height, duration, prefix, loading, circle, count
+      width, height, duration, prefix, loading, circle, count, tag
     } = this;
     const classes = [`${prefix}-skeleton`];
     const elements = [];
@@ -69,6 +73,9 @@ export default {
     }
 
     const showLoading = typeof loading !== 'undefined' ? loading : isEmptyVNode(this.$slots.default);
+    if (tag) {
+      return h(tag, !showLoading ? this.$slots.default : elements);
+    }
     return (!showLoading ? this.$slots.default : <span>{ elements }</span>);
   }
 };

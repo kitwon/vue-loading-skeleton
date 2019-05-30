@@ -1,4 +1,4 @@
-declare class PuSkeleton extends Vue {
+declare class PuSkeleton {
   /** component class prefix */
   prefix: string;
 

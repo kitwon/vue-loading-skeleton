@@ -411,20 +411,24 @@ var isEmptyVNode = function isEmptyVNode(children) {
       type: Number,
       default: 1.5
     },
+    tag: {
+      type: String,
+      default: 'span'
+    },
     width: [String, Number],
     height: [String, Number],
     circle: Boolean,
     loading: undefined
   },
-  render: function render() {
-    var h = arguments[0];
+  render: function render(h) {
     var width = this.width,
         height = this.height,
         duration = this.duration,
         prefix = this.prefix,
         loading = this.loading,
         circle = this.circle,
-        count = this.count;
+        count = this.count,
+        tag = this.tag;
     var classes = ["".concat(prefix, "-skeleton")];
     var elements = [];
 
@@ -449,6 +453,11 @@ var isEmptyVNode = function isEmptyVNode(children) {
     }
 
     var showLoading = typeof loading !== 'undefined' ? loading : isEmptyVNode(this.$slots.default);
+
+    if (tag) {
+      return h(tag, !showLoading ? this.$slots.default : elements);
+    }
+
     return !showLoading ? this.$slots.default : h("span", [elements]);
   }
 });

@@ -1,4 +1,4 @@
-declare class PuSkeletonTheme extends Vue {
+declare class PuSkeletonTheme {
   /** Color of skeleton */
   color: string;
 
