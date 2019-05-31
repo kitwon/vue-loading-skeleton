@@ -137,9 +137,10 @@ import { Skeleton, Skeleton } form 'vue-loading-skeleton';
 | loading  | 组件加载状态，使用这个props时候不会检测子节点 | boolean | undefined |
 
 ### SkeletonTheme props
-| props     | description                    | type   | default |
-| --------- | ------------------------------ | ------ | ------- |
-| color     | 骨架的颜色                     | string | #eeeeee |
-| highlight | 动画高亮颜色                   | string | #f5f5f5 |
-| duration  | 设置所有骨架组件的动画过渡时间 | number | 1.5     |
-| tag       | 容器标签                       | string | div     |
+| props     | description                    | type    | default   |
+| --------- | ------------------------------ | ------- | --------- |
+| color     | 骨架的颜色                     | string  | #eeeeee   |
+| highlight | 动画高亮颜色                   | string  | #f5f5f5   |
+| duration  | 设置所有骨架组件的动画过渡时间 | number  | 1.5       |
+| loading   | 控制所有骨架组件加载状态       | boolean | undefined |
+| tag       | 容器标签                       | string  | div       |

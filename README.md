@@ -136,9 +136,10 @@ import { Skeleton, Skeleton } form 'vue-loading-skeleton';
 | loading  | skeleton loading status              | boolean | undefined |
 
 ### SkeletonTheme props
-| props     | description                  | type   | default |
-| --------- | ---------------------------- | ------ | ------- |
-| color     | skeleton background color    | string | #eeeeee |
-| highlight | animation highlight color    | string | #f5f5f5 |
-| duration  | set duration of all skeleton | number | 1.5     |
-| tag       | theme container tag name     | string | div     |
+| props     | description                             | type    | default   |
+| --------- | --------------------------------------- | ------- | --------- |
+| color     | skeleton background color               | string  | #eeeeee   |
+| highlight | animation highlight color               | string  | #f5f5f5   |
+| duration  | set duration of all skeleton            | number  | 1.5       |
+| loading   | control loading status of all skeletons | boolean | undefined |
+| tag       | theme container tag name                | string  | div       |

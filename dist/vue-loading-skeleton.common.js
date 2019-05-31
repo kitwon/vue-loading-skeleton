@@ -186,7 +186,8 @@ var SkeletonStyle = {
   name: 'PuSkeletonTheme',
   provide: function provide() {
     return {
-      _themeStyle: this.themeStyle
+      _themeStyle: this.themeStyle,
+      _skeletonTheme: this
     };
   },
   props: {
@@ -205,6 +206,10 @@ var SkeletonStyle = {
     tag: {
       type: String,
       default: 'div'
+    },
+    loading: {
+      type: Boolean,
+      default: undefined
     }
   },
   data: function data() {
@@ -387,6 +392,10 @@ var isEmptyVNode = function isEmptyVNode(children) {
     themeStyle: {
       from: '_themeStyle',
       default: SkeletonStyle
+    },
+    theme: {
+      from: '_skeletonTheme',
+      default: {}
     }
   },
   props: {
@@ -411,15 +420,20 @@ var isEmptyVNode = function isEmptyVNode(children) {
     circle: Boolean,
     loading: undefined
   },
+  computed: {
+    isLoading: function isLoading() {
+      return typeof this.theme.loading !== 'undefined' ? this.theme.loading : this.loading;
+    }
+  },
   render: function render(h) {
     var width = this.width,
         height = this.height,
         duration = this.duration,
         prefix = this.prefix,
-        loading = this.loading,
         circle = this.circle,
         count = this.count,
-        tag = this.tag;
+        tag = this.tag,
+        isLoading = this.isLoading;
     var classes = ["".concat(prefix, "-skeleton")];
     var elements = [];
 
@@ -443,7 +457,7 @@ var isEmptyVNode = function isEmptyVNode(children) {
       }, ["\u200C"]));
     }
 
-    var showLoading = typeof loading !== 'undefined' ? loading : isEmptyVNode(this.$slots.default);
+    var showLoading = typeof isLoading !== 'undefined' ? isLoading : isEmptyVNode(this.$slots.default);
 
     if (tag) {
       return h(tag, !showLoading ? this.$slots.default : elements);

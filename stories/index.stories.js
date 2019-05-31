@@ -96,4 +96,33 @@ storiesOf('Skeleton Theme', module)
         <Item data={{}} />
       </SkeletonTheme>
     )
+  }))
+  .add('Control all lodaing status', () => ({
+    data() {
+      return {
+        loading: true,
+        itemData: [1, 2, 3, 4]
+      };
+    },
+    created() {
+      this.itemData = this.itemData.map(i => (
+        {
+          img: `./image${i}.png`,
+          title: `Item Title ${i}`,
+          body: `Make beautiful, animated loading skeletons that automatically adapt to your app ${i}.`
+        }
+      ));
+    },
+    mounted() {
+      setTimeout(() => {
+        this.loading = false;
+      }, 1500);
+    },
+    render(h) {
+      return (
+        <SkeletonTheme loading={this.loading} style="width: 500px">
+          {this.itemData.map((v, i) => (<Item key={i} data={v} />))}
+        </SkeletonTheme>
+      );
+    }
   }));

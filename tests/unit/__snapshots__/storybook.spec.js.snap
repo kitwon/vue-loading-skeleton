@@ -1,60 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Skeleton Component Change Theme 1`] = `
-<div
-  class="item"
->
-  <div
-    class="item__photo"
-  >
-    <span>
-      <span
-        class="pu-skeleton"
-        style="animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%; background-color: rgb(230, 243, 253);"
-      >
-        ‌
-      </span>
-    </span>
-  </div>
-   
-  <div
-    class="item__meta"
-  >
-    <div
-      class="item__title"
-    >
-      <span>
-        <span
-          class="pu-skeleton"
-          style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(230, 243, 253);"
-        >
-          ‌
-        </span>
-      </span>
-    </div>
-     
-    <div
-      class="item__info"
-    >
-      <span>
-        <span
-          class="pu-skeleton"
-          style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(230, 243, 253);"
-        >
-          ‌
-        </span>
-        <span
-          class="pu-skeleton"
-          style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(230, 243, 253);"
-        >
-          ‌
-        </span>
-      </span>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Skeleton Component Default 1`] = `
 <div
   class="item"
@@ -65,7 +10,7 @@ exports[`Storyshots Skeleton Component Default 1`] = `
     <span>
       <span
         class="pu-skeleton"
-        style="animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%; background-color: rgb(238, 238, 238);"
+        style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%;"
       >
         ‌
       </span>
@@ -81,7 +26,7 @@ exports[`Storyshots Skeleton Component Default 1`] = `
       <span>
         <span
           class="pu-skeleton"
-          style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(238, 238, 238);"
+          style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
         >
           ‌
         </span>
@@ -94,13 +39,69 @@ exports[`Storyshots Skeleton Component Default 1`] = `
       <span>
         <span
           class="pu-skeleton"
-          style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(238, 238, 238);"
+          style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
         >
           ‌
         </span>
         <span
           class="pu-skeleton"
-          style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(238, 238, 238);"
+          style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+        >
+          ‌
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Skeleton Component Disable animation 1`] = `
+<div
+  class="item"
+  duration="0"
+>
+  <div
+    class="item__photo"
+  >
+    <span>
+      <span
+        class="pu-skeleton"
+        style="background-color: rgb(238, 238, 238); height: 50px; border-radius: 50%;"
+      >
+        ‌
+      </span>
+    </span>
+  </div>
+   
+  <div
+    class="item__meta"
+  >
+    <div
+      class="item__title"
+    >
+      <span>
+        <span
+          class="pu-skeleton"
+          style="background-color: rgb(238, 238, 238);"
+        >
+          ‌
+        </span>
+      </span>
+    </div>
+     
+    <div
+      class="item__info"
+    >
+      <span>
+        <span
+          class="pu-skeleton"
+          style="background-color: rgb(238, 238, 238);"
+        >
+          ‌
+        </span>
+        <span
+          class="pu-skeleton"
+          style="background-color: rgb(238, 238, 238);"
         >
           ‌
         </span>
@@ -124,7 +125,7 @@ exports[`Storyshots Skeleton Component Use with list 1`] = `
       <span>
         <span
           class="pu-skeleton"
-          style="animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%; background-color: rgb(238, 238, 238);"
+          style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%;"
         >
           ‌
         </span>
@@ -140,7 +141,7 @@ exports[`Storyshots Skeleton Component Use with list 1`] = `
         <span>
           <span
             class="pu-skeleton"
-            style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(238, 238, 238);"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
           >
             ‌
           </span>
@@ -153,13 +154,13 @@ exports[`Storyshots Skeleton Component Use with list 1`] = `
         <span>
           <span
             class="pu-skeleton"
-            style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(238, 238, 238);"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
           >
             ‌
           </span>
           <span
             class="pu-skeleton"
-            style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(238, 238, 238);"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
           >
             ‌
           </span>
@@ -176,7 +177,7 @@ exports[`Storyshots Skeleton Component Use with list 1`] = `
       <span>
         <span
           class="pu-skeleton"
-          style="animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%; background-color: rgb(238, 238, 238);"
+          style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%;"
         >
           ‌
         </span>
@@ -192,7 +193,7 @@ exports[`Storyshots Skeleton Component Use with list 1`] = `
         <span>
           <span
             class="pu-skeleton"
-            style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(238, 238, 238);"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
           >
             ‌
           </span>
@@ -205,13 +206,13 @@ exports[`Storyshots Skeleton Component Use with list 1`] = `
         <span>
           <span
             class="pu-skeleton"
-            style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(238, 238, 238);"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
           >
             ‌
           </span>
           <span
             class="pu-skeleton"
-            style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(238, 238, 238);"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
           >
             ‌
           </span>
@@ -228,7 +229,7 @@ exports[`Storyshots Skeleton Component Use with list 1`] = `
       <span>
         <span
           class="pu-skeleton"
-          style="animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%; background-color: rgb(238, 238, 238);"
+          style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%;"
         >
           ‌
         </span>
@@ -244,7 +245,7 @@ exports[`Storyshots Skeleton Component Use with list 1`] = `
         <span>
           <span
             class="pu-skeleton"
-            style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(238, 238, 238);"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
           >
             ‌
           </span>
@@ -257,13 +258,13 @@ exports[`Storyshots Skeleton Component Use with list 1`] = `
         <span>
           <span
             class="pu-skeleton"
-            style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(238, 238, 238);"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
           >
             ‌
           </span>
           <span
             class="pu-skeleton"
-            style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(238, 238, 238);"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
           >
             ‌
           </span>
@@ -280,7 +281,7 @@ exports[`Storyshots Skeleton Component Use with list 1`] = `
       <span>
         <span
           class="pu-skeleton"
-          style="animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%; background-color: rgb(238, 238, 238);"
+          style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%;"
         >
           ‌
         </span>
@@ -296,7 +297,7 @@ exports[`Storyshots Skeleton Component Use with list 1`] = `
         <span>
           <span
             class="pu-skeleton"
-            style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(238, 238, 238);"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
           >
             ‌
           </span>
@@ -309,13 +310,13 @@ exports[`Storyshots Skeleton Component Use with list 1`] = `
         <span>
           <span
             class="pu-skeleton"
-            style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(238, 238, 238);"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
           >
             ‌
           </span>
           <span
             class="pu-skeleton"
-            style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(238, 238, 238);"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
           >
             ‌
           </span>
@@ -336,7 +337,7 @@ exports[`Storyshots Skeleton Component Use with v-if 1`] = `
     <span>
       <span
         class="pu-skeleton"
-        style="animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%; background-color: rgb(238, 238, 238);"
+        style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%;"
       >
         ‌
       </span>
@@ -352,7 +353,7 @@ exports[`Storyshots Skeleton Component Use with v-if 1`] = `
       <span>
         <span
           class="pu-skeleton"
-          style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(238, 238, 238);"
+          style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
         >
           ‌
         </span>
@@ -365,17 +366,398 @@ exports[`Storyshots Skeleton Component Use with v-if 1`] = `
       <span>
         <span
           class="pu-skeleton"
-          style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(238, 238, 238);"
+          style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
         >
           ‌
         </span>
         <span
           class="pu-skeleton"
-          style="animation: SkeletonLoading 1.5s ease-in-out infinite; background-color: rgb(238, 238, 238);"
+          style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
         >
           ‌
         </span>
       </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Skeleton Theme Change Theme 1`] = `
+<div>
+  <div
+    class="item"
+  >
+    <div
+      class="item__photo"
+    >
+      <span>
+        <span
+          class="pu-skeleton"
+          style="background-color: rgb(230, 243, 253); animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%;"
+        >
+          ‌
+        </span>
+      </span>
+    </div>
+     
+    <div
+      class="item__meta"
+    >
+      <div
+        class="item__title"
+      >
+        <span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(230, 243, 253); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+        </span>
+      </div>
+       
+      <div
+        class="item__info"
+      >
+        <span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(230, 243, 253); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(230, 243, 253); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Skeleton Theme Control all lodaing status 1`] = `
+<div
+  style="width: 500px;"
+>
+  <div
+    class="item"
+  >
+    <div
+      class="item__photo"
+    >
+      <span>
+        <span
+          class="pu-skeleton"
+          style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%;"
+        >
+          ‌
+        </span>
+      </span>
+    </div>
+     
+    <div
+      class="item__meta"
+    >
+      <div
+        class="item__title"
+      >
+        <span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+        </span>
+      </div>
+       
+      <div
+        class="item__info"
+      >
+        <span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="item"
+  >
+    <div
+      class="item__photo"
+    >
+      <span>
+        <span
+          class="pu-skeleton"
+          style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%;"
+        >
+          ‌
+        </span>
+      </span>
+    </div>
+     
+    <div
+      class="item__meta"
+    >
+      <div
+        class="item__title"
+      >
+        <span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+        </span>
+      </div>
+       
+      <div
+        class="item__info"
+      >
+        <span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="item"
+  >
+    <div
+      class="item__photo"
+    >
+      <span>
+        <span
+          class="pu-skeleton"
+          style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%;"
+        >
+          ‌
+        </span>
+      </span>
+    </div>
+     
+    <div
+      class="item__meta"
+    >
+      <div
+        class="item__title"
+      >
+        <span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+        </span>
+      </div>
+       
+      <div
+        class="item__info"
+      >
+        <span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="item"
+  >
+    <div
+      class="item__photo"
+    >
+      <span>
+        <span
+          class="pu-skeleton"
+          style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%;"
+        >
+          ‌
+        </span>
+      </span>
+    </div>
+     
+    <div
+      class="item__meta"
+    >
+      <div
+        class="item__title"
+      >
+        <span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+        </span>
+      </div>
+       
+      <div
+        class="item__info"
+      >
+        <span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Skeleton Theme Disable all animation 1`] = `
+<div>
+  <div
+    class="item"
+  >
+    <div
+      class="item__photo"
+    >
+      <span>
+        <span
+          class="pu-skeleton"
+          style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%;"
+        >
+          ‌
+        </span>
+      </span>
+    </div>
+     
+    <div
+      class="item__meta"
+    >
+      <div
+        class="item__title"
+      >
+        <span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+        </span>
+      </div>
+       
+      <div
+        class="item__info"
+      >
+        <span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="item"
+  >
+    <div
+      class="item__photo"
+    >
+      <span>
+        <span
+          class="pu-skeleton"
+          style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite; height: 50px; border-radius: 50%;"
+        >
+          ‌
+        </span>
+      </span>
+    </div>
+     
+    <div
+      class="item__meta"
+    >
+      <div
+        class="item__title"
+      >
+        <span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+        </span>
+      </div>
+       
+      <div
+        class="item__info"
+      >
+        <span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+          <span
+            class="pu-skeleton"
+            style="background-color: rgb(238, 238, 238); animation: SkeletonLoading 1.5s ease-in-out infinite;"
+          >
+            ‌
+          </span>
+        </span>
+      </div>
     </div>
   </div>
 </div>

@@ -20,6 +20,10 @@ export default {
     themeStyle: {
       from: '_themeStyle',
       default: SkeletonStyle
+    },
+    theme: {
+      from: '_skeletonTheme',
+      default: ({})
     }
   },
   props: {
@@ -44,9 +48,14 @@ export default {
     circle: Boolean,
     loading: undefined
   },
+  computed: {
+    isLoading() {
+      return typeof this.theme.loading !== 'undefined' ? this.theme.loading : this.loading;
+    }
+  },
   render(h) {
     const {
-      width, height, duration, prefix, loading, circle, count, tag
+      width, height, duration, prefix, circle, count, tag, isLoading
     } = this;
     const classes = [`${prefix}-skeleton`];
     const elements = [];
@@ -72,7 +81,7 @@ export default {
       );
     }
 
-    const showLoading = typeof loading !== 'undefined' ? loading : isEmptyVNode(this.$slots.default);
+    const showLoading = typeof isLoading !== 'undefined' ? isLoading : isEmptyVNode(this.$slots.default);
     if (tag) {
       return h(tag, !showLoading ? this.$slots.default : elements);
     }

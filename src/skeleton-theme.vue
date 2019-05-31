@@ -15,7 +15,8 @@ export default {
   name: 'PuSkeletonTheme',
   provide() {
     return {
-      _themeStyle: this.themeStyle
+      _themeStyle: this.themeStyle,
+      _skeletonTheme: this
     };
   },
   props: {
@@ -34,6 +35,10 @@ export default {
     tag: {
       type: String,
       default: 'div'
+    },
+    loading: {
+      type: Boolean,
+      default: undefined
     }
   },
   data() {
