@@ -90,7 +90,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style>
 .pu-skeleton {
   background-size: 200px 100%;
   background-repeat: no-repeat;

@@ -1,6 +1,6 @@
 {
   "name": "vue-loading-skeleton",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "main": "dist/vue-loading-skeleton.umd.js",
   "module": "src/index.js",
   "description": "Make beautiful loading skeleton that automatically adapt your vue app.",
@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "core-js": "3",
-    "react-loading-skeleton": "^1.1.2",
     "vue": "^2.6.10"
   },
   "devDependencies": {
