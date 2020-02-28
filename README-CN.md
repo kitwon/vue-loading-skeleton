@@ -10,7 +10,7 @@ or
 `yarn add vue-loading-skeleton`
 
 ```jsx
-import Skeleton from 'vue-loading-skeleton';
+import { Skeleton } from 'vue-loading-skeleton';
 
 // In jsx template
 <Skeleton />
@@ -21,7 +21,9 @@ import Skeleton from 'vue-loading-skeleton';
 
 ```jsx
 import Vue from 'vue';
-import Skelenton from 'vue-loading-skeleton';
+import Skeleton from 'vue-loading-skeleton';
+
+Vue.use(Skeleton);
 
 // In jsx template
 <PuSkeleton />
