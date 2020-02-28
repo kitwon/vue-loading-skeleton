@@ -21,7 +21,7 @@ Or register for global component
 
 ```jsx
 import Vue from 'vue';
-import Skelenton from 'vue-loading-skeleton';
+import Skeleton from 'vue-loading-skeleton';
 
 // In jsx template
 <PuSkeleton />
