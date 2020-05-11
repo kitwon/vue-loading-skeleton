@@ -1,6 +1,6 @@
 {
   "name": "vue-loading-skeleton",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "main": "dist/vue-loading-skeleton.umd.js",
   "module": "dist/vue-loading-skeleton.esm.js",
   "description": "Make beautiful loading skeleton that automatically adapt your vue app.",
