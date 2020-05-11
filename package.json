@@ -14,8 +14,8 @@
   "license": "MIT",
   "scripts": {
     "build:common": "vue-cli-service build --target lib --name vue-loading-skeleton src/index.js",
-    "build:cjs": "rollup --config rollup.config.js",
-    "build": "npm run build:common && npm run build:cjs",
+    "build:es": "rollup --config rollup.config.js",
+    "build": "npm run build:common && npm run build:es",
     "deploy": "npm run lint && npm run test:unit && npm run build && npm run build-storybook",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
@@ -23,7 +23,7 @@
     "build-storybook": "build-storybook -o ./docs"
   },
   "dependencies": {
-    "core-js": "3"
+    "core-js": "2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
@@ -53,6 +53,7 @@
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-vue": "^5.1.6",
+    "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.10"
   },
   "peerDependencies": {

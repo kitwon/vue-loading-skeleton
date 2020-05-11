@@ -10,7 +10,7 @@ module.exports = {
   input: r('src/index.js'),
   output: {
     file: r('dist/vue-loading-skeleton.esm.js'),
-    format: 'cjs'
+    format: 'es'
   },
   plugins: [
     resolve({

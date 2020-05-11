@@ -1,7 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -458,6 +454,5 @@ var index = {
   }
 };
 
-exports.Skeleton = __vue_component__$1;
-exports.SkeletonTheme = __vue_component__;
-exports.default = index;
+export default index;
+export { __vue_component__$1 as Skeleton, __vue_component__ as SkeletonTheme };

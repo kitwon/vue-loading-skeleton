@@ -1,4 +1,5 @@
 module.exports = {
+  setupFiles: ['<rootDir>/tests/unit/register-context.js'],
   moduleFileExtensions: [
     'js',
     'jsx',
