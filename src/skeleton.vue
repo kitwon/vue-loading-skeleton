@@ -1,11 +1,12 @@
-<script lang="jsx">
+<script>
+import { h } from 'vue'
 import { SkeletonStyle } from './skeleton-theme.vue';
 
 const isEmptyVNode = (children) => {
   if (!children) return true;
 
   const [firstNode] = children;
-  let str = firstNode.text;
+  let str = firstNode.children;
   if (str) {
     // remove all line-break and space character
     str = str.replace(/(\n|\r\n|\s)/g, '');
@@ -53,7 +54,7 @@ export default {
       return typeof this.theme.loading !== 'undefined' ? this.theme.loading : this.loading;
     }
   },
-  render(h) {
+  render() {
     const {
       width, height, duration, prefix, circle, count, tag, isLoading
     } = this;
@@ -72,20 +73,23 @@ export default {
 
     for (let i = 0; i < count; i += 1) {
       elements.push(
-        <span
-          key={i}
-          class={classes}
-          style={styles}>
-          &zwnj;
-        </span>
+        h('span', {
+          key: i,
+          class: classes,
+          style: styles,
+          innerHTML: '&zwnj;'
+        })
       );
     }
 
-    const showLoading = typeof isLoading !== 'undefined' ? isLoading : isEmptyVNode(this.$slots.default);
+    const defaultSlot = this.$slots.default && this.$slots.default()
+    const showLoading = typeof isLoading !== 'undefined' ? isLoading : isEmptyVNode(defaultSlot);
+
     if (tag) {
-      return h(tag, !showLoading ? this.$slots.default : elements);
+      return h(tag, !showLoading ? defaultSlot : elements);
     }
-    return (!showLoading ? this.$slots.default : <span>{ elements }</span>);
+
+    return (!showLoading ? defaultSlot : h('span', [elements]));
   }
 };
 </script>

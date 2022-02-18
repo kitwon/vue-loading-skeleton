@@ -1,4 +1,6 @@
 <script lang="jsx">
+import { h } from 'vue'
+
 export const DEFAULT_BACKGROUND = '#eeeeee';
 export const DEFAULT_HIGHLIGHT = '#f5f5f5';
 export const SkeletonStyle = {
@@ -46,7 +48,7 @@ export default {
       themeStyle: { ...SkeletonStyle }
     };
   },
-  render(h) {
+  render() {
     const { color, highlight, duration } = this;
     this.themeStyle.backgroundColor = color;
     this.themeStyle.backgroundImage = `linear-gradient(
@@ -63,9 +65,9 @@ export default {
     }
 
     if (this.tag) {
-      return h(this.tag, this.$slots.default);
+      return h(this.tag, this.$slots.default());
     }
-    return this.$slots.default[0];
+    return this.$slots.default()[0];
   }
 };
 </script>

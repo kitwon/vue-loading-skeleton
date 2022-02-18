@@ -20,43 +20,30 @@
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o ./docs"
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "core-js": "2"
+    "@vue/compat": "^3.1.0",
+    "core-js": "2",
+    "vue": "^3.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@storybook/addon-actions": "^5.0.11",
-    "@storybook/addon-links": "^5.0.11",
-    "@storybook/addon-storyshots": "^5.0.11",
-    "@storybook/addon-storysource": "^5.0.11",
-    "@storybook/addons": "^5.0.11",
-    "@storybook/vue": "^5.0.11",
-    "@vue/cli-plugin-babel": "^3.8.0",
-    "@vue/cli-plugin-eslint": "^3.8.0",
-    "@vue/cli-plugin-unit-jest": "^3.8.0",
-    "@vue/cli-service": "^3.8.0",
+    "@babel/core": "^7.17.5",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/vue3": "^6.4.19",
+    "@vue/cli-plugin-babel": "^5.0.1",
+    "@vue/cli-plugin-eslint": "^5.0.1",
     "@vue/eslint-config-airbnb": "^4.0.0",
-    "@vue/test-utils": "1.0.0-beta.29",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
-    "babel-loader": "^8.0.6",
-    "babel-plugin-require-context-hook": "^1.0.0",
-    "babel-preset-vue": "^2.0.2",
+    "@vue/test-utils": "2.0.0-rc.18",
+    "babel-loader": "^8.2.3",
     "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "less": "^3.9.0",
-    "less-loader": "^5.0.0",
+    "eslint-plugin-vue": "^8.4.1",
     "rollup": "^1.32.0",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-vue": "^5.1.6",
-    "vue": "^2.6.11",
-    "vue-template-compiler": "^2.6.10"
-  },
-  "peerDependencies": {
-    "vue": "^2.6.11"
+    "vue-loader": "^16.8.3"
   }
 }
