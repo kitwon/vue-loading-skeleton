@@ -1,63 +1,68 @@
-<script>
-import { h } from 'vue'
-import { SkeletonStyle } from './skeleton-theme.vue';
+<script lang="ts">
+import { h, defineComponent, PropType } from "vue";
+import { SkeletonStyle } from "./skeleton-theme.vue";
 
-const isEmptyVNode = (children) => {
+import "./style.css";
+
+const isEmptyVNode = (children: any) => {
   if (!children) return true;
 
   const [firstNode] = children;
   let str = firstNode.children;
   if (str) {
     // remove all line-break and space character
-    str = str.replace(/(\n|\r\n|\s)/g, '');
+    str = str.replace(/(\n|\r\n|\s)/g, "");
   }
 
-  return typeof firstNode.tag === 'undefined' && !str;
+  return typeof firstNode.tag === "undefined" && !str;
 };
 
-export default {
-  name: 'PuSkeleton',
+export default defineComponent({
+  name: "PuSkeleton",
   inject: {
     themeStyle: {
-      from: '_themeStyle',
-      default: SkeletonStyle
+      from: "_themeStyle",
+      default: SkeletonStyle,
     },
     theme: {
-      from: '_skeletonTheme',
-      default: ({})
-    }
+      from: "_skeletonTheme",
+      default: {},
+    },
   },
   props: {
     prefix: {
       type: String,
-      default: 'pu'
+      default: "pu",
     },
     count: {
       type: Number,
-      default: 1
+      default: 1,
     },
     duration: {
       type: Number,
-      default: 1.5
+      default: 1.5,
     },
     tag: {
       type: String,
-      default: 'span'
+      default: "span",
     },
     width: [String, Number],
     height: [String, Number],
     circle: Boolean,
-    loading: undefined
+    loading: {
+      type: Boolean as PropType<any>,
+    },
   },
   computed: {
     isLoading() {
-      return typeof this.theme.loading !== 'undefined' ? this.theme.loading : this.loading;
-    }
+      return typeof this.theme.loading !== "undefined"
+        ? this.theme.loading
+        : this.loading;
+    },
   },
   render() {
-    const {
-      width, height, duration, prefix, circle, count, tag, isLoading
-    } = this;
+    const { width, height, duration, prefix, circle, count, tag, isLoading } =
+      this;
     const classes = [`${prefix}-skeleton`];
     const elements = [];
     const styles = { ...this.themeStyle };
@@ -65,52 +70,32 @@ export default {
     if (duration) {
       styles.animation = `SkeletonLoading ${duration}s ease-in-out infinite`;
     } else {
-      styles.backgroundImage = '';
+      styles.backgroundImage = "";
     }
     if (width) styles.width = width;
     if (height) styles.height = height;
-    if (circle) styles.borderRadius = '50%';
+    if (circle) styles.borderRadius = "50%";
 
     for (let i = 0; i < count; i += 1) {
       elements.push(
-        h('span', {
+        h("span", {
           key: i,
           class: classes,
           style: styles,
-          innerHTML: '&zwnj;'
+          innerHTML: "&zwnj;",
         })
       );
     }
 
-    const defaultSlot = this.$slots.default && this.$slots.default()
-    const showLoading = typeof isLoading !== 'undefined' ? isLoading : isEmptyVNode(defaultSlot);
+    const defaultSlot = this.$slots.default && this.$slots.default();
+    const showLoading =
+      typeof isLoading !== "undefined" ? isLoading : isEmptyVNode(defaultSlot);
 
     if (tag) {
       return h(tag, !showLoading ? defaultSlot : elements);
     }
 
-    return (!showLoading ? defaultSlot : h('span', [elements]));
-  }
-};
+    return !showLoading ? defaultSlot : h("span", [elements]);
+  },
+});
 </script>
-
-<style>
-.pu-skeleton {
-  background-size: 200px 100%;
-  background-repeat: no-repeat;
-  border-radius: 3px;
-  display: inline-block;
-  line-height: 1;
-  width: 100%;
-  height: inherit;
-}
-
-@keyframes SkeletonLoading {
-  0% {
-    background-position: -200px 0;
-  }
-  100% {
-    background-position: calc(200px + 100%) 0;
-  }
-}
-</style>

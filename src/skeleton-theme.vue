@@ -1,9 +1,10 @@
-<script lang="jsx">
-import { h } from 'vue'
+<script lang="ts">
+import { h, defineComponent } from 'vue'
 
 export const DEFAULT_BACKGROUND = '#eeeeee';
 export const DEFAULT_HIGHLIGHT = '#f5f5f5';
 export const SkeletonStyle = {
+  animation: '',
   backgroundColor: DEFAULT_BACKGROUND,
   backgroundImage: `linear-gradient(
     90deg,
@@ -13,7 +14,7 @@ export const SkeletonStyle = {
   )`
 };
 
-export default {
+export default defineComponent({
   name: 'PuSkeletonTheme',
   provide() {
     return {
@@ -65,9 +66,9 @@ export default {
     }
 
     if (this.tag) {
-      return h(this.tag, this.$slots.default());
+      return h(this.tag, this.$slots.default?.());
     }
-    return this.$slots.default()[0];
+    return this.$slots.default?.()[0];
   }
-};
+});
 </script>

@@ -1,9 +1,8 @@
-import Vue, { PluginObject, PluginFunction } from 'vue';
-import PuSkeleton from './skeleton';
-import PuSkeletonTheme from './skeleton-theme';
-
-export class Skeleton extends PuSkeleton {}
-export class SkeletonTheme extends PuSkeletonTheme {}
-
-declare const SkeletonPlugin: PluginObject<never>
-export default SkeletonPlugin
+import Skeleton from './skeleton.vue';
+import SkeletonTheme from './skeleton-theme.vue';
+import { App } from 'vue';
+export { Skeleton, SkeletonTheme };
+declare const _default: {
+    install(Vue: App): void;
+};
+export default _default;

@@ -20,12 +20,13 @@
 </template>
 
 <script>
-import { Skeleton } from '../index'
+import { Skeleton } from '../../dist/vue-loading-skeleton.es'
 
 export default {
   components: { PuSkeleton: Skeleton },
   props: {
     data: {
+      type: Object,
       required: true,
       default: () => ({}),
     },
