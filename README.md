@@ -6,11 +6,18 @@ Make beautiful loading skeleton that automatically adapt your vue app.
 
 [📕中文文档](https://github.com/kitwon/vue-loading-skeleton/blob/master/README-CN.md)
 
+## Install
+yarn
+`yarn add vue-loading-skeleton@next`
+or npm
+`npm install vue-loading-skeleton@next`
+
 ## Base usage
 Install by `npm`/`yarn` with vue-loading-skeleton
 
 ```jsx
 import { Skeleton } from 'vue-loading-skeleton';
+import "vue-loading-skeleton/dist/style.css"
 
 // In jsx template
 <Skeleton />
@@ -22,6 +29,7 @@ Or register for global component
 ```jsx
 import Vue from 'vue';
 import Skeleton from 'vue-loading-skeleton';
+import "vue-loading-skeleton/dist/style.css"
 
 Vue.use(Skeleton)
 

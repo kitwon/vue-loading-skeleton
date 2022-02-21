@@ -1,8 +1,8 @@
 {
   "name": "vue-loading-skeleton",
-  "version": "1.1.9",
-  "main": "dist/vue-loading-skeleton.umd.js",
-  "module": "dist/vue-loading-skeleton.esm.js",
+  "version": "2.0.0-beta.1",
+  "main": "dist/vue-loading-skeleton.cjs.js",
+  "module": "dist/vue-loading-skeleton.es.js",
   "description": "Make beautiful loading skeleton that automatically adapt your vue app.",
   "keywords": [
     "vuejs",
@@ -10,17 +10,15 @@
     "skeleton"
   ],
   "types": "types/index.d.ts",
-  "style": "dist/vue-loading.skeleton.css",
+  "style": "dist/style.css",
   "license": "MIT",
   "scripts": {
-    "build:common": "vue-cli-service build --target lib --name vue-loading-skeleton src/index.js",
-    "build:es": "rollup --config rollup.config.js",
     "build": "vite build",
     "deploy": "npm run lint && npm run test:unit && npm run build && npm run build-storybook",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build:storybook": "build-storybook --modern -o ./docs"
   },
   "dependencies": {
     "@vue/compat": "^3.1.0",

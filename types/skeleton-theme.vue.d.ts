@@ -1,11 +1,5 @@
-export declare const DEFAULT_BACKGROUND = "#eeeeee";
-export declare const DEFAULT_HIGHLIGHT = "#f5f5f5";
-export declare const SkeletonStyle: {
-    animation: string;
-    backgroundColor: string;
-    backgroundImage: string;
-};
-declare const _default: import("vue").DefineComponent<{
+export declare const ThemeProvider: import("vue").InjectionKey<any>;
+declare const SkeletonTheme: import("vue").DefineComponent<{
     color: {
         type: StringConstructor;
         default: string;
@@ -26,13 +20,9 @@ declare const _default: import("vue").DefineComponent<{
         type: BooleanConstructor;
         default: any;
     };
-}, unknown, {
-    themeStyle: {
-        animation: string;
-        backgroundColor: string;
-        backgroundImage: string;
-    };
-}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, Record<string, any>, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, () => import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+    [key: string]: any;
+}>, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, Record<string, any>, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     color: {
         type: StringConstructor;
         default: string;
@@ -60,4 +50,4 @@ declare const _default: import("vue").DefineComponent<{
     duration: number;
     highlight: string;
 }>;
-export default _default;
+export default SkeletonTheme;

@@ -11,6 +11,7 @@ or
 
 ```jsx
 import { Skeleton } from 'vue-loading-skeleton';
+import "vue-loading-skeleton/dist/style.css"
 
 // In jsx template
 <Skeleton />
@@ -22,6 +23,7 @@ import { Skeleton } from 'vue-loading-skeleton';
 ```jsx
 import Vue from 'vue';
 import Skeleton from 'vue-loading-skeleton';
+import "vue-loading-skeleton/dist/style.css"
 
 Vue.use(Skeleton);
 
