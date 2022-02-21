@@ -13,7 +13,7 @@ tests
 
 #storybook
 .storybook
-stories
+src/stories
 
 #other
 *.config.js
