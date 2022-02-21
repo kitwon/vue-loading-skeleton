@@ -8,6 +8,14 @@ export default defineConfig({
       name: 'vue-loading-skeleton',
       fileName: 'vue-loading-skeleton',
       formats: ['es' , 'cjs' , 'umd']
+    },
+    rollupOptions: {
+      external: ['vue'],
+      output: {
+        globals: {
+          vue: 'Vue'
+        }
+      }
     }
   },
   plugins: [vue()]

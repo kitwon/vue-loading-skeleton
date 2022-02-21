@@ -13,8 +13,9 @@ export const SkeletonStyle = {
   )`
 };
 
-export const ThemeStyleProvider = Symbol('themeStyle') as InjectionKey<ComputedRef<typeof SkeletonStyle>>
+export const ThemeStyleProviderKey = Symbol('_themeStyle') as InjectionKey<ComputedRef<typeof SkeletonStyle>>
+export const ThemeProviderKey = Symbol('_theme')
 export function createThemeProvider<T>() {
-  return Symbol('theme') as InjectionKey<T>
+  return ThemeProviderKey as InjectionKey<T>
 }
 

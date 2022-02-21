@@ -1,5 +1,5 @@
 import Item from "./item.vue";
-import { SkeletonTheme } from "..";
+import { SkeletonTheme } from "../../dist/vue-loading-skeleton.es";
 
 export default {
   title: "Skeleton Theme"

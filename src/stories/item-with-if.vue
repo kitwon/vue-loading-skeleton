@@ -20,7 +20,9 @@
 </template>
 
 <script>
-import { Skeleton } from '../index'
+// import { Skeleton } from '../index'
+import { Skeleton } from '../../dist/vue-loading-skeleton.es'
+import '../../dist/style.css'
 
 export default {
   components: { PuSkeleton: Skeleton },

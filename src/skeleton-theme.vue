@@ -1,7 +1,7 @@
 <script lang="ts">
 import { h, defineComponent, computed, provide } from "vue";
 import {
-  ThemeStyleProvider,
+  ThemeStyleProviderKey,
   createThemeProvider,
   DEFAULT_BACKGROUND,
   DEFAULT_HIGHLIGHT,
@@ -55,7 +55,7 @@ const SkeletonTheme = defineComponent({
       return style;
     });
 
-    provide(ThemeStyleProvider, themeStyle);
+    provide(ThemeStyleProviderKey, themeStyle);
     provide(ThemeProvider, props);
 
     return () => {

@@ -1,11 +1,9 @@
-import Skeleton from './skeleton.vue';
-import SkeletonTheme from './skeleton-theme.vue';
+import PuSkeleton from './skeleton.vue';
+import PuSkeletonTheme from './skeleton-theme.vue';
 import { App } from 'vue';
 
-export {
-  Skeleton,
-  SkeletonTheme
-};
+export const Skeleton = PuSkeleton;
+export const SkeletonTheme = PuSkeletonTheme;
 
 export default {
   install(Vue: App) {

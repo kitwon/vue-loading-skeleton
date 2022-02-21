@@ -15,7 +15,7 @@
   "scripts": {
     "build:common": "vue-cli-service build --target lib --name vue-loading-skeleton src/index.js",
     "build:es": "rollup --config rollup.config.js",
-    "build": "npm run build:common && npm run build:es",
+    "build": "vite build",
     "deploy": "npm run lint && npm run test:unit && npm run build && npm run build-storybook",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",

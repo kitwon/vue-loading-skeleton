@@ -1,7 +1,7 @@
 <script lang="ts">
 /* eslint-disable vue/require-default-prop */
 import { h, defineComponent, PropType, inject, computed, Slot } from "vue";
-import { ThemeStyleProvider, SkeletonStyle } from "./composition/theme";
+import { ThemeStyleProviderKey, SkeletonStyle } from "./composition/theme";
 import { ThemeProvider } from "./skeleton-theme.vue";
 
 import "./style.css";
@@ -50,11 +50,12 @@ export default defineComponent({
   },
   setup(props, { slots }) {
     const theme = inject(ThemeProvider, {});
-    const themeStyle = inject(ThemeStyleProvider, {
+    const themeStyle = inject(ThemeStyleProviderKey, {
       value: { ...SkeletonStyle }
     } as any);
+
     const isLoading = computed(() => {
-      return typeof theme.loading !== "undefined"
+      return typeof theme?.loading !== "undefined"
         ? theme.loading
         : props.loading;
     });
@@ -63,7 +64,9 @@ export default defineComponent({
     });
 
     const styles = computed(() => {
-      const s: any = { ...themeStyle.value };
+      if (!themeStyle) return {}
+
+      const s: any = { ...themeStyle?.value };
       if (props.duration) {
         s.animation = `SkeletonLoading ${props.duration}s ease-in-out infinite`;
       } else {

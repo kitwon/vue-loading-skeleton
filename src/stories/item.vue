@@ -18,7 +18,9 @@
 
 <script lang="ts">
 import { PropType } from 'vue';
-import { Skeleton } from '../index'
+import { Skeleton } from '../../dist/vue-loading-skeleton.es'
+import '../../dist/style.css'
+// import { Skeleton } from '../index'
 
 export default {
   name: 'SkeletonItem',
