@@ -4,7 +4,7 @@
       <template v-if="data.img">
         {{ data.img }}
       </template>
-      <PuSkeleton circle height="50px" v-else> </PuSkeleton>
+      <PuSkeleton v-else circle height="50px"> </PuSkeleton>
     </div>
     <div class="item__meta">
       <div class="item__title">
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { Skeleton } from '../../dist/vue-loading-skeleton.es'
+import { Skeleton } from '../index'
 
 export default {
   components: { PuSkeleton: Skeleton },
@@ -28,9 +28,9 @@ export default {
     data: {
       type: Object,
       required: true,
-      default: () => ({}),
-    },
-  },
+      default: () => ({})
+    }
+  }
 };
 </script>
 

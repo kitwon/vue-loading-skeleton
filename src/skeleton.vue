@@ -1,101 +1,105 @@
 <script lang="ts">
-import { h, defineComponent, PropType } from "vue";
-import { SkeletonStyle } from "./skeleton-theme.vue";
+/* eslint-disable vue/require-default-prop */
+import { h, defineComponent, PropType, inject, computed, Slot } from "vue";
+import { ThemeStyleProvider, SkeletonStyle } from "./composition/theme";
+import { ThemeProvider } from "./skeleton-theme.vue";
 
 import "./style.css";
 
-const isEmptyVNode = (children: any) => {
+const isEmptyVNode = (children: ReturnType<Slot> | undefined) => {
   if (!children) return true;
 
   const [firstNode] = children;
   let str = firstNode.children;
-  if (str) {
-    // remove all line-break and space character
-    str = str.replace(/(\n|\r\n|\s)/g, "");
-  }
 
-  return typeof firstNode.tag === "undefined" && !str;
+  return !firstNode.el && !str;
 };
 
 export default defineComponent({
   name: "PuSkeleton",
-  inject: {
-    themeStyle: {
-      from: "_themeStyle",
-      default: SkeletonStyle,
-    },
-    theme: {
-      from: "_skeletonTheme",
-      default: {},
-    },
-  },
   props: {
     prefix: {
       type: String,
-      default: "pu",
+      default: "pu"
     },
     count: {
       type: Number,
-      default: 1,
+      default: 1
     },
     duration: {
       type: Number,
-      default: 1.5,
+      default: 1.5
     },
     tag: {
       type: String,
-      default: "span",
+      default: "span"
     },
-    width: [String, Number],
-    height: [String, Number],
+    width: {
+      type: [String, Number],
+      default: 0
+    },
+    height: {
+      type: [String, Number],
+      default: 0
+    },
     circle: Boolean,
     loading: {
-      type: Boolean as PropType<any>,
-    },
-  },
-  computed: {
-    isLoading() {
-      return typeof this.theme.loading !== "undefined"
-        ? this.theme.loading
-        : this.loading;
-    },
-  },
-  render() {
-    const { width, height, duration, prefix, circle, count, tag, isLoading } =
-      this;
-    const classes = [`${prefix}-skeleton`];
-    const elements = [];
-    const styles = { ...this.themeStyle };
-
-    if (duration) {
-      styles.animation = `SkeletonLoading ${duration}s ease-in-out infinite`;
-    } else {
-      styles.backgroundImage = "";
+      type: [Boolean, Object, Array] as PropType<any>,
+      default: undefined
     }
-    if (width) styles.width = width;
-    if (height) styles.height = height;
-    if (circle) styles.borderRadius = "50%";
-
-    for (let i = 0; i < count; i += 1) {
-      elements.push(
-        h("span", {
-          key: i,
-          class: classes,
-          style: styles,
-          innerHTML: "&zwnj;",
-        })
-      );
-    }
-
-    const defaultSlot = this.$slots.default && this.$slots.default();
-    const showLoading =
-      typeof isLoading !== "undefined" ? isLoading : isEmptyVNode(defaultSlot);
-
-    if (tag) {
-      return h(tag, !showLoading ? defaultSlot : elements);
-    }
-
-    return !showLoading ? defaultSlot : h("span", [elements]);
   },
+  setup(props, { slots }) {
+    const theme = inject(ThemeProvider, {});
+    const themeStyle = inject(ThemeStyleProvider, {
+      value: { ...SkeletonStyle }
+    } as any);
+    const isLoading = computed(() => {
+      return typeof theme.loading !== "undefined"
+        ? theme.loading
+        : props.loading;
+    });
+    const classes = computed(() => {
+      return [`${props.prefix}-skeleton`];
+    });
+
+    const styles = computed(() => {
+      const s: any = { ...themeStyle.value };
+      if (props.duration) {
+        s.animation = `SkeletonLoading ${props.duration}s ease-in-out infinite`;
+      } else {
+        s.backgroundImage = "";
+      }
+      if (props.width) s.width = props.width;
+      if (props.height) s.height = props.height;
+      if (props.circle) s.borderRadius = "50%";
+
+      return s;
+    });
+
+    return () => {
+      const defaultSlot = slots.default?.();
+      const showLoading =
+        typeof isLoading.value !== "undefined"
+          ? isLoading.value
+          : isEmptyVNode(defaultSlot);
+
+      const elements = Array(showLoading ? props.count : 0)
+        .fill(0)
+        .map((_, idx) => {
+          return h("span", {
+            key: idx,
+            class: classes.value,
+            style: styles.value,
+            innerHTML: "&zwnj;"
+          });
+        });
+
+      if (props.tag) {
+        return h(props.tag, !showLoading ? defaultSlot : elements);
+      }
+
+      return !showLoading ? defaultSlot : h("span", elements);
+    };
+  }
 });
 </script>

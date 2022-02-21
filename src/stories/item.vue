@@ -16,18 +16,20 @@
   </div>
 </template>
 
-<script>
-import { Skeleton } from '../../dist/vue-loading-skeleton.es'
+<script lang="ts">
+import { PropType } from 'vue';
+import { Skeleton } from '../index'
 
 export default {
+  name: 'SkeletonItem',
   components: { PuSkeleton: Skeleton },
   props: {
     data: {
-      type: Object,
+      type: Object as PropType<any>,
       required: true,
-      default: () => ({}),
-    },
-  },
+      default: () => ({})
+    }
+  }
 };
 </script>
 
