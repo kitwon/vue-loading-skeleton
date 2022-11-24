@@ -114,7 +114,7 @@ export default {
 Using the `<SkeletonTheme />` component, you can change the color, duration of all skeleton components below it:
 
 ```jsx
-import { Skeleton, Skeleton } form 'vue-loading-skeleton';
+import { Skeleton, Skeleton } from 'vue-loading-skeleton';
 
 <SkeletonTheme color="#e6f3fd" highlight="#eef6fd">
   <div class="item">
